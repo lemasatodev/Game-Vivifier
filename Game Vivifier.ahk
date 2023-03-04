@@ -1,8 +1,8 @@
-/* 	Game Vivifier by lemasato
+/* 	Game Vivifier by lemasatodev
 	Allows NVIDIA users to have custom gamma/vibrance profiles for their applications
 
 	https://autohotkey.com/boards/viewtopic.php?t=9455
-	https://github.com/lemasato/Game-Vivifier
+	https://github.com/lemasatodev/Game-Vivifier
 */
 
 #Warn LocalSameAsGlobal, StdOut
@@ -38,7 +38,7 @@ Start_Script() {
 	ProgramValues.Name 					:= "Game Vivifier"
 	ProgramValues.Version 				:= "2.1.3"
 	ProgramValues.Branch 				:= "master"
-	ProgramValues.Github_User 			:= "lemasato"
+	ProgramValues.Github_User 			:= "lemasatodev"
 	ProgramValues.GitHub_Repo 			:= "Game-Vivifier"
 ;	folders
 	ProgramValues.Local_Folder 			:= A_MyDocuments "\AutoHotkey\" ProgramValues.Name
@@ -46,13 +46,13 @@ Start_Script() {
 	ProgramValues.Others_Folder 		:= ProgramValues.Local_Folder "\Others"
 ;	updater link
 	ProgramValues.Updater_File 			:= A_ScriptDir "\Game-Vivifier-Updater.exe"
-	ProgramValues.Updater_Link 			:= "https://raw.githubusercontent.com/lemasato/Game-Vivifier/" ProgramValues.Branch "/Updater_v2.exe"
+	ProgramValues.Updater_Link 			:= "https://raw.githubusercontent.com/lemasatodev/Game-Vivifier/" ProgramValues.Branch "/Updater_v2.exe"
 ;	verion link / changelogs link
-	ProgramValues.Version_Link 			:= "https://raw.githubusercontent.com/lemasato/Game-Vivifier/" ProgramValues.Branch "/version.txt"
-	ProgramValues.Changelogs_Link 		:= "https://raw.githubusercontent.com/lemasato/Game-Vivifier/" ProgramValues.Branch "/changelogs.txt"
+	ProgramValues.Version_Link 			:= "https://raw.githubusercontent.com/lemasatodev/Game-Vivifier/" ProgramValues.Branch "/version.txt"
+	ProgramValues.Changelogs_Link 		:= "https://raw.githubusercontent.com/lemasatodev/Game-Vivifier/" ProgramValues.Branch "/changelogs.txt"
 ;	new version link
 	ProgramValues.NewVersion_File		:= A_ScriptDir "\Game-Vivifier-NewVersion.exe"
-	ProgramValues.NewVersion_Link 		:= "https://raw.githubusercontent.com/lemasato/Game-Vivifier/" ProgramValues.Branch "/Game Vivifier.exe"
+	ProgramValues.NewVersion_Link 		:= "https://raw.githubusercontent.com/lemasatodev/Game-Vivifier/" ProgramValues.Branch "/Game Vivifier.exe"
 ;	local files
 	ProgramValues.Ini_File 					:= ProgramValues.Local_Folder "\Preferences.ini"
 	ProgramValues.Translations_File			:= ProgramValues.Local_Folder "\Translations.ini"
@@ -60,10 +60,10 @@ Start_Script() {
 	ProgramValues.Logs_File					:= ProgramValues.Logs_Folder "\DebugLogs.txt"	
 
 ;	special links
-	ProgramValues.Link_GitHub				:= "https://github.com/lemasato/Game-Vivifier"
+	ProgramValues.Link_GitHub				:= "https://github.com/lemasatodev/Game-Vivifier"
 	ProgramValues.Link_AHK					:= "https://autohotkey.com/boards/viewtopic.php?t=9455"
-	ProgramValues.Link_NVIDIA_Screenshot	:= "https://raw.githubusercontent.com/lemasato/Game-Vivifier/" ProgramValues.Branch "/Screenshots/Nvidia Control Panel.png"
-	ProgramValues.Link_GitHub_Wiki 			:= "https://github.com/lemasato/Game-Vivifier/wiki"
+	ProgramValues.Link_NVIDIA_Screenshot	:= "https://raw.githubusercontent.com/lemasatodev/Game-Vivifier/" ProgramValues.Branch "/Screenshots/Nvidia Control Panel.png"
+	ProgramValues.Link_GitHub_Wiki 			:= "https://github.com/lemasatodev/Game-Vivifier/wiki"
 
 	global ExcludedProcesses 			:= "explorer.exe,autohotkey.exe,nvcplui.exe," A_ScriptName
 
@@ -333,7 +333,7 @@ NVIDIA_Get_Control(ctrlName) {
 
 	if (ctrlName = "Adjust Desktop") {
 		i := 1, rtrn := "", handler := nvHandler
-		validControls := "Régler les paramètres des couleurs du bureau" ; FR
+		validControls := "Rï¿½gler les paramï¿½tres des couleurs du bureau" ; FR
 					   . ",Adjust desktop color settings" ; EN
 
 		Loop {
@@ -992,7 +992,7 @@ Gui_About(params="") {
 
 	labelPrefix := "Gui_About_"
 	Gui, About:Destroy
-	Gui, About:New, +HwndaboutGuiHandler +AlwaysOnTop +SysMenu -MinimizeBox -MaximizeBox +OwnDialogs +LabelGui_About_,% programName " by lemasato v" verCurrent
+	Gui, About:New, +HwndaboutGuiHandler +AlwaysOnTop +SysMenu -MinimizeBox -MaximizeBox +OwnDialogs +LabelGui_About_,% programName " by lemasatodev v" verCurrent
 
 	translations := Get_Translations(A_ThisFunc)
 	textContent := (isUpdateAvailable)?(translations.GB_UpdateAvailable " v" onlineVersionAvailable):(translations.GB_UpdateNotAvailable)

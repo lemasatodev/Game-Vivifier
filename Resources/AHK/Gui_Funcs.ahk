@@ -1,5 +1,5 @@
-/*		Credits: lemasato
-		https://github.com/lemasato
+/*		Credits: lemasatodev
+		https://github.com/lemasatodev
 
 		Allow creating GUIs in functions without having to declare the whole function as static
 		Gui_Add(params): When a control has a variable attached to it, it's handle is added to a global associative array.
